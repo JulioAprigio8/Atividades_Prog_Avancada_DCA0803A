@@ -12,3 +12,5 @@ referencia para treinar comandos linux: linuxjourney.com
 
 Clique [aqui](https://github.com/JulioAprigio8/Atividades_Prog_Avancada_DCA0803A/wiki) para acessar a Wiki do repositório
 
+[Aqui](https://github.com/agostinhobritojr/c-cpp-slides) poderá consultar os slides do professor sobre os conteudos das aulas
+

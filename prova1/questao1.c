@@ -26,25 +26,28 @@ como sua codificacao da matriz ”m” na variável de 64 bits foi realizada.
 
 void exibe_matriz(unsigned char num);
 
-unsigned int i; // Variavel auxiliar
+unsigned int i,j; // Variavel auxiliar
 
 int main(){
 
   unsigned long long LED; //Variavel com 64bytes
-  unsigned char *m; //Matriz M
+  unsigned char **m; //Matriz M
 	m = &LED;
 
 	for(i = 0; i < 8; i++){//preenche de forma pseudo aleatorio a matriz
-		m[i] = (rand()%100);
+        for(j = 0; j<8;i++){
+        m[i][j] = (rand()%100);
 	}
+}
 
 	printf("devera exibir 8bytes: %d\n", sizeof(LED)); //Debug para verificar se a variavel tem 8bytes
 
 	for(i = 0; i < 7; i++){//Imprime matriz no formato 8x8
-		exibe_matriz(m[i]);
-		printf("\n");
+        for(j=0;j<7;j++){
+            exibe_matriz(m[i][j]);
+		    printf("\n");
+        }
 	}
-
 
    printf("\nValor inteiro = %llu\n", LED); //Mostra o valor inteiro com 64Bytes
 
@@ -53,8 +56,8 @@ int main(){
 
 void exibe_matriz(unsigned char num){//imprime a matriz
   unsigned char bit, aux;
-  bit=128;
   for(aux=0; aux<8; aux++){
+  bit=128;
     if((num & bit) > 0){
       printf("1");
     }
@@ -64,4 +67,5 @@ void exibe_matriz(unsigned char num){//imprime a matriz
     bit = bit>>1; //deslocando "bit" 1 bit para direita
   }
 }
+
 
